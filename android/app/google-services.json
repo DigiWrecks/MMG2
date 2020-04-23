@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "997754242759",
+    "firebase_url": "https://my-doctor-538c3.firebaseio.com",
+    "project_id": "my-doctor-538c3",
+    "storage_bucket": "my-doctor-538c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997754242759:android:4372f5c3d4b60173d460e2",
+        "android_client_info": {
+          "package_name": "com.digiwrecks.mydoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997754242759-14bbvuv5jaher51fon16eb4ghqpnrqep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAo9A0Ap5KqFafxYpYeM5KWTMAiKs1cFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997754242759-14bbvuv5jaher51fon16eb4ghqpnrqep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
