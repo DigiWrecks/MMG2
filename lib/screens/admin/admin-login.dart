@@ -31,9 +31,17 @@ class AdminLogin extends StatelessWidget {
 
         OneSignal.shared.getPermissionSubscriptionState().then((result) {
           var playerId = result.subscriptionStatus.userId;
-          Firestore.instance.collection('admin').document(docId).updateData({
-            'notification': playerId
-          });
+
+          List deviceIds = user[0].data['notification'];
+          if(!deviceIds.contains(playerId)){
+            deviceIds.add(playerId);
+            print(deviceIds);
+            Firestore.instance.collection('admin').document(docId).updateData({
+              'notification': deviceIds
+            });
+          }
+
+
         });
 
         Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){

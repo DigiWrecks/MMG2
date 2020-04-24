@@ -80,12 +80,13 @@ class Element4 extends StatelessWidget {
                         'location': location,
                       });
 
-                      var sub = await Firestore.instance.collection('admin').where('email', isEqualTo: 'admin@mydoctor.com').getDocuments();
+                      var sub = await Firestore.instance.collection('admin').where('email', isEqualTo: 'katia.caucci@gmail.com').getDocuments();
                       var user = sub.documents;
-                      String playerId = user[0]['notification'];
+                      List playerId = user[0]['notification'];
+                      List<String> playerIds = List<String>.from(playerId);
 
                       OneSignal.shared.postNotification(OSCreateNotification(
-                        playerIds: [playerId],
+                        playerIds: playerIds,
                         content: "Ricevuta nuova richiesta. Vai all'app MGG2",
                         heading: "Ricevuta nuova richiesta!",
                       ));

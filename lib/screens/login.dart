@@ -42,9 +42,9 @@ class LogIn extends StatelessWidget {
       prefs.setString('email', user.email);
       prefs.setString('tax', logged[0]['tax']);
       prefs.setString('location', logged[0]['location']);
-      prefs.setString('name', logged[0]['fname']+' '+logged[0]['lname']);
+      prefs.setString('name', logged[0]['fname'].trim()+' '+logged[0]['lname'].trim());
 
-      List<String> searchStrings = [logged[0]['fname'],logged[0]['lname']];
+      List<String> searchStrings = [logged[0]['fname'].trim(),logged[0]['lname'].trim()];
       prefs.setStringList('searchString', searchStrings);
 
             Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){

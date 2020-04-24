@@ -85,12 +85,13 @@ class Element1 extends StatelessWidget {
                       });
 
 
-                      var sub = await Firestore.instance.collection('admin').where('email', isEqualTo: 'admin@mydoctor.com').getDocuments();
+                      var sub = await Firestore.instance.collection('admin').where('email', isEqualTo: 'katia.caucci@gmail.com').getDocuments();
                       var user = sub.documents;
-                      String playerId = user[0]['notification'];
+                      List playerId = user[0]['notification'];
+                      List<String> playerIds = List<String>.from(playerId);
 
                       OneSignal.shared.postNotification(OSCreateNotification(
-                        playerIds: [playerId],
+                        playerIds: playerIds,
                         content: "Ricevuta nuova richiesta. Vai all'app MGG2",
                         heading: "Ricevuta nuova richiesta!",
                       ));
@@ -124,12 +125,13 @@ class Element1 extends StatelessWidget {
                         'location': location,
                       });
 
-                      var sub = await Firestore.instance.collection('admin').where('email', isEqualTo: 'admin@mydoctor.com').getDocuments();
+                      var sub = await Firestore.instance.collection('admin').where('email', isEqualTo: 'katia.caucci@gmail.com').getDocuments();
                       var user = sub.documents;
-                      String playerId = user[0]['notification'];
+                      List playerId = user[0]['notification'];
+                      List<String> playerIds = List<String>.from(playerId);
 
                       OneSignal.shared.postNotification(OSCreateNotification(
-                        playerIds: [playerId],
+                        playerIds: playerIds,
                         content: "Ricevuta nuova richiesta. Vai all'app MGG2",
                         heading: "Ricevuta nuova richiesta!",
                       ));
@@ -141,7 +143,7 @@ class Element1 extends StatelessWidget {
                       ToastBar(text: 'Richiesta inviata',color: Colors.green).show();
                     }
                     catch(e){
-                      ToastBar(text: 'Errore',color: Colors.red).show();
+                      ToastBar(text: e.toString(),color: Colors.red).show();
                     }
                   }
 
@@ -149,7 +151,7 @@ class Element1 extends StatelessWidget {
                   if(data.select1=='image'){
                     if(data.image1!=''&&q1.text!=''){
                       print('data added on 1 in ${data.image1}');
-                     saveAsImage(data.image1, q1.text);
+                     await saveAsImage(data.image1, q1.text);
                     }
                     else if(data.image1!=''&&q1.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -157,7 +159,7 @@ class Element1 extends StatelessWidget {
                   }else{
                     if(m1.text!=''&&q1.text!=''){
                       print('data added on 1 in ${data.image1}');
-                      saveAsText(m1.text, q1.text);
+                      await saveAsText(m1.text, q1.text);
                     }
                     else if(m1.text!=''&&q1.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -169,7 +171,7 @@ class Element1 extends StatelessWidget {
                   if(data.select2=='image'){
                     if(data.image2!=''&&q2.text!=''){
                       print('data added on 2 in ${data.image2}');
-                      saveAsImage(data.image2, q2.text);
+                      await saveAsImage(data.image2, q2.text);
                     }
                     else if(data.image2!=''&&q2.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -177,7 +179,7 @@ class Element1 extends StatelessWidget {
                   }else{
                     if(m2.text!=''&&q2.text!=''){
                       print('data added on 2 in ${data.image2}');
-                      saveAsText(m2.text, q2.text);
+                      await saveAsText(m2.text, q2.text);
                     }
                     else if(m2.text!=''&&q2.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -187,9 +189,9 @@ class Element1 extends StatelessWidget {
 
                   ////part 3
                   if(data.select3=='image'){
-                    if(data.image3!=''&&q3.text==''){
+                    if(data.image3!=''&&q3.text!=''){
                       print('data added on 3 in ${data.image3}');
-                      saveAsImage(data.image3, q3.text);
+                      await saveAsImage(data.image3, q3.text);
                     }
                     else if(data.image3!=''&&q3.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -197,7 +199,7 @@ class Element1 extends StatelessWidget {
                   }else{
                     if(m3.text!=''&&q3.text!=''){
                       print('data added on 3 in ${data.image3}');
-                      saveAsText(m3.text, q3.text);
+                      await saveAsText(m3.text, q3.text);
                     }
                     else if(m3.text!=''&&q3.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -209,7 +211,7 @@ class Element1 extends StatelessWidget {
                   if(data.select4=='image'){
                     if(data.image4!=''&&q4.text!=''){
                       print('data added on 4 in ${data.image4}');
-                      saveAsImage(data.image4, q4.text);
+                      await saveAsImage(data.image4, q4.text);
                     }
                     else if(data.image4!=''&&q4.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -217,7 +219,7 @@ class Element1 extends StatelessWidget {
                   }else{
                     if(m4.text!=''&&q4.text!=''){
                       print('data added on 4 in ${data.image4}');
-                      saveAsText(m4.text, q4.text);
+                      await saveAsText(m4.text, q4.text);
                     }
                     else if(m4.text!=''&&q4.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -228,7 +230,7 @@ class Element1 extends StatelessWidget {
                   if(data.select5=='image'){
                     if(data.image5!=''&&q5.text!=''){
                       print('data added on 5 in ${data.image5}');
-                      saveAsImage(data.image5, q5.text);
+                      await saveAsImage(data.image5, q5.text);
                     }
                     else if(data.image5!=''&&q5.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
@@ -236,7 +238,7 @@ class Element1 extends StatelessWidget {
                   }else{
                     if(m5.text!=''&&q5.text!=''){
                       print('data added on 5 in ${data.image5}');
-                      saveAsText(m5.text, q5.text);
+                      await saveAsText(m5.text, q5.text);
                     }
                     else if(m5.text!=''&&q5.text==''){
                       ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();

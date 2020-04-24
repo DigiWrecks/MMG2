@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mydoctor/screens/admin/admin-home.dart';
+import 'package:mydoctor/screens/admin/admin-login.dart';
 import 'package:mydoctor/screens/home.dart';
 import 'package:mydoctor/screens/login.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         accentColor: Color(0xff90CAF9)
       ),
       home: email==null?LogIn():email=='admin'?AdminHome():Home(),
-      //home: AdminHome(),
+      //home: AdminLogin(),
     );
   }
 }
