@@ -25,13 +25,14 @@ class _SelectWidgetState extends State<SelectWidget> {
   double _height = 170;
   String item1;
   Widget bottomWidget;
+  Color _color;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     item1 = 'image';
-
+    _color = Color(0xff9C27B0);
     bottomWidget =GestureDetector(
         onTap: () async {
           SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -44,6 +45,9 @@ class _SelectWidgetState extends State<SelectWidget> {
             final StorageTaskSnapshot downloadUrl = (await uploadTask.onComplete);
             String imgurl = (await downloadUrl.ref.getDownloadURL());
             print("url is $imgurl");
+            setState(() {
+              _color = Colors.green;
+            });
             widget.object.setImage(imageVar: 'I${widget.itemNo}',value: imgurl);
             ToastBar(text: 'Caricato',color: Colors.green).show();
           }
@@ -125,7 +129,7 @@ class _SelectWidgetState extends State<SelectWidget> {
           height: ScreenUtil().setHeight(170),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Color(0xff9C27B0)
+              color: _color
           ),
 
           child: Center(

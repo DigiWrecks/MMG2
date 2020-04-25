@@ -55,7 +55,7 @@ class Element4 extends StatelessWidget {
 
                 SizedBox(height: ScreenUtil().setHeight(80),),
                 Button(text: 'Invia al dottore',onclick: () async {
-
+                  ToastBar(text: 'Attendere prego',color: Colors.orange).show();
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   String email = prefs.getString('email');
                   String tax = prefs.getString('tax');

@@ -80,7 +80,7 @@ class Contact extends StatelessWidget {
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.fromLTRB(ScreenUtil().setHeight(30),ScreenUtil().setHeight(30),0,0),
-                      child: CustomText(text: 'Telefondo',color: Colors.black,size: ScreenUtil().setSp(50),),
+                      child: CustomText(text: 'Telefono',color: Colors.black,size: ScreenUtil().setSp(50),),
                     ),
 
                     Center(

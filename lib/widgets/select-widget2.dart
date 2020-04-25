@@ -22,6 +22,14 @@ class SelectWidget2 extends StatefulWidget {
 }
 
 class _SelectWidget2State extends State<SelectWidget2> {
+  Color _color;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _color = Color(0xff4A148C);
+  }
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 720, height: 1520, allowFontScaling: false);
@@ -37,6 +45,9 @@ class _SelectWidget2State extends State<SelectWidget2> {
           final StorageTaskSnapshot downloadUrl = (await uploadTask.onComplete);
           String imgurl = (await downloadUrl.ref.getDownloadURL());
           print("url is $imgurl");
+          setState(() {
+            _color = Colors.green;
+          });
           widget.object.setImage(imageVar: 'I${widget.itemNo}',value: imgurl);
           ToastBar(text: 'Caricato',color: Colors.green).show();
         }
@@ -50,7 +61,7 @@ class _SelectWidget2State extends State<SelectWidget2> {
         height: ScreenUtil().setHeight(170),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Color(0xff4A148C)
+          color: _color
         ),
 
         child: Icon(Icons.file_upload,color: Colors.white,size: 38,),

@@ -8,7 +8,7 @@ import 'package:mydoctor/widgets/toast.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class UploadCard extends StatelessWidget {
+class UploadCard extends StatefulWidget {
   final TextEditingController controller;
   final String itemNo;
   final Element2Data object;
@@ -16,13 +16,26 @@ class UploadCard extends StatelessWidget {
   const UploadCard({Key key, this.controller, this.itemNo, this.object}) : super(key: key);
 
   @override
+  _UploadCardState createState() => _UploadCardState();
+}
+
+class _UploadCardState extends State<UploadCard> {
+  Color _color;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _color = Color(0xffD81B60);
+  }
+  @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 720, height: 1520, allowFontScaling: false);
     return Container(
       height: ScreenUtil().setHeight(170),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0xffD81B60),
+        color: _color,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           bottomRight: Radius.circular(20)
@@ -44,7 +57,10 @@ class UploadCard extends StatelessWidget {
                 final StorageTaskSnapshot downloadUrl = (await uploadTask.onComplete);
                 String imgurl = (await downloadUrl.ref.getDownloadURL());
               print("url is $imgurl");
-              object.setImage(imageVar: 'I$itemNo',value: imgurl);
+              setState(() {
+                _color = Colors.green;
+              });
+              widget.object.setImage(imageVar: 'I${widget.itemNo}',value: imgurl);
               ToastBar(text: 'Caricato',color: Colors.green).show();
               }
               catch(e){
@@ -79,7 +95,7 @@ class UploadCard extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   textAlignVertical: TextAlignVertical.top,
-                  controller: controller,
+                  controller: widget.controller,
                   style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: ScreenUtil().setSp(40)),
                   decoration: new InputDecoration.collapsed(
                       hintText: 'Inserisci Quantità',
