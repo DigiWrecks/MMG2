@@ -223,6 +223,7 @@ class _AdminExsistingCompleteState extends State<AdminExsistingComplete> {
                         String type = dataList[i]['type'];
                         String tax = dataList[i]['tax']!=null?dataList[i]['tax']:'';
                         String name = dataList[i]['name'];
+                        String text = dataList[i]['text'];
                         String image = dataList[i]['image']!=null?dataList[i]['image']:'';
                         String medName = dataList[i]['medicine']!=null?dataList[i]['medicine']:'';
 
@@ -238,6 +239,7 @@ class _AdminExsistingCompleteState extends State<AdminExsistingComplete> {
                             name: name,
                             isComplete: true,
                             tax: tax,
+                          text: text,
                           docId: dataList[i].documentID,
                           ),
                         );

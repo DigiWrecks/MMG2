@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     VerticalCard(text: 'Ricette Terapie Croniche',color: Color(0xff9C27B0),image: 'images/home1.png',navigationTo: Element1(),),
-                    VerticalCard(text: 'Ricette Nuove prescrizioni',color: Color(0xffD81B60),image: 'images/home2.png',navigationTo: Element2(),),
+                    VerticalCard(text: 'Richieste farmaco da specialista',color: Color(0xffD81B60),image: 'images/home2.png',navigationTo: Element2(),),
                   ],
                 ),
                 SizedBox(height: ScreenUtil().setHeight(40),),

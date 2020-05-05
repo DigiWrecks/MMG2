@@ -63,13 +63,14 @@ class _ExsistingState extends State<Exsisting> {
                   String date = dataList[i]['date'];
                   String quantity = dataList[i]['quantity'];
                   String type = dataList[i]['type'];
+                  String text = dataList[i]['text'];
                   String image = dataList[i]['image']!=null?dataList[i]['image']:'';
                   String medName = dataList[i]['medicine']!=null?dataList[i]['medicine']:'';
                   bool completed = dataList[i]['completed'];
 
                   return Padding(
                     padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(35)),
-                    child: ArchiveCard(type: type,quantity: quantity,date: date,image: image,medicineName: medName,isComplete: completed,),
+                    child: ArchiveCard(type: type,quantity: quantity,date: date,image: image,medicineName: medName,isComplete: completed,text: text),
                   );
                 },
               ):

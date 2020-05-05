@@ -66,11 +66,12 @@ class _ChallengeState extends State<Challenge> {
                 String image = dataList[i]['image']!=null?dataList[i]['image']:'';
                 String medName = dataList[i]['medicine']!=null?dataList[i]['medicine']:'';
                 bool completed = dataList[i]['completed'];
+                String text = dataList[i]['text'];
                 print(completed);
 
                 return Padding(
                   padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(35)),
-                  child: ArchiveCard(type: 'image',date: date,image: image,medicineName: medName,isQuantity: false,isComplete: completed,),
+                  child: ArchiveCard(type: 'image',date: date,image: image,medicineName: medName,isQuantity: false,isComplete: completed,text: text,),
                 );
               },
             ):

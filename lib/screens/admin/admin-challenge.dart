@@ -224,7 +224,7 @@ class _AdminChallangeState extends State<AdminChallange> {
                       String image = dataList[i]['image']!=null?dataList[i]['image']:'';
                       String medName = dataList[i]['medicine']!=null?dataList[i]['medicine']:'';
                       String playerId = dataList[i]['notification'];
-
+                      String text = dataList[i]['text'];
                       return Padding(
                         padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(35)),
                         child: AdminArchiveCard(
@@ -238,6 +238,7 @@ class _AdminChallangeState extends State<AdminChallange> {
                           name: name,
                           tax: tax,
                           docId: dataList[i].documentID,
+                          text: text,
                         ),
                       );
                     },

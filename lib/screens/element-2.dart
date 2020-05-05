@@ -27,7 +27,7 @@ class Element2 extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: CustomText(text: 'Ricette Nuove prescrizioni',),
+        title: CustomText(text: 'Richieste Farmaco da specialista',),
       ),
       body: Container(
         width: double.infinity,

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:mydoctor/widgets/image-view.dart';
+import 'package:mydoctor/widgets/inputfield.dart';
 import 'package:mydoctor/widgets/toast.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
@@ -22,17 +23,20 @@ class AdminArchiveCard extends StatelessWidget {
   final bool isComplete;
   final String collection;
   final String playerId;
+  final String text;
+  AdminArchiveCard({Key key, this.type, this.date, this.quantity, this.medicineName, this.image, this.isQuantity=true, this.name, this.tax, this.docId, this.isComplete=false, this.collection,this.playerId, this.text}) : super(key: key);
 
-  const AdminArchiveCard({Key key, this.type, this.date, this.quantity, this.medicineName, this.image, this.isQuantity=true, this.name, this.tax, this.docId, this.isComplete=false, this.collection,this.playerId}) : super(key: key);
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    controller.text = text;
     ScreenUtil.init(context, width: 720, height: 1520, allowFontScaling: false);
     return  Stack(
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(top: ScreenUtil().setHeight(65)),
           child: Container(
-            height: ScreenUtil().setHeight(500),
+            height: ScreenUtil().setHeight(610),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 color: Color(0xff2E7D32)
@@ -129,14 +133,39 @@ class AdminArchiveCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: ScreenUtil().setHeight(40),),
+                Container(
+                    width: ScreenUtil().setWidth(500),
+                    child: Padding(
+                      padding:  EdgeInsets.only(top: 10),
+                      child: TextField(
+                        style: textStyle,
+                        cursorColor: Colors.white,
+                        controller: controller,
+                        decoration: InputDecoration(
+                          hintText: 'Inserisci Testo',
+                          hintStyle: textStyle,
+                          enabledBorder:UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white, width: 2),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white, width: 5),
+                          ),
+                        ),
+                        onSubmitted: (x){
+                          Firestore.instance.collection(collection).document(docId).updateData({
+                            'text': x,
+                          });
+                        },
+                      ),
+                    )),
+                SizedBox(height: ScreenUtil().setHeight(20),),
                 isComplete==false?Padding(
                   padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(50)),
                   child: RaisedButton(
                     onPressed: (){
                       try{
                           Firestore.instance.collection(collection).document(docId).updateData({
-                            'completed': true
+                            'completed': true,
                           });
 
                           OneSignal.shared.postNotification(OSCreateNotification(

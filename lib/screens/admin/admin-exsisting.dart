@@ -233,6 +233,7 @@ class _AdminExsistingState extends State<AdminExsisting> {
                         String tax = dataList[i]['tax']!=null?dataList[i]['tax']:'';
                         String name = dataList[i]['name'];
                         String playerId = dataList[i]['notification'];
+                        String text = dataList[i]['text'];
                         String image = dataList[i]['image']!=null?dataList[i]['image']:'';
                         String medName = dataList[i]['medicine']!=null?dataList[i]['medicine']:'';
 
@@ -248,6 +249,7 @@ class _AdminExsistingState extends State<AdminExsisting> {
                             collection: 'existing',
                             name: name,
                             tax: tax,
+                          text: text,
                           docId: dataList[i].documentID,
                           ),
                         );

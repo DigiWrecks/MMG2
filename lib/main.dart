@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         accentColor: Color(0xff90CAF9)
       ),
       home: email==null?LogIn():email=='admin'?AdminHome():Home(),
-      //home: AdminLogin(),
+      //home: AdminHome(),
     );
   }
 }

@@ -64,11 +64,11 @@ class _NewRecipeState extends State<NewRecipe> {
                 String quantity = dataList[i]['quantity'];
                 String image = dataList[i]['image']!=null?dataList[i]['image']:'';
                 bool completed = dataList[i]['completed'];
-
+                String text = dataList[i]['text'];
 
                 return Padding(
                   padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(35)),
-                  child: ArchiveCard(type: 'image',quantity: quantity,date: date,image: image,isComplete: completed,),
+                  child: ArchiveCard(type: 'image',quantity: quantity,date: date,image: image,isComplete: completed,text: text,),
                 );
               },
             ):

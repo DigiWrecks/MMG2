@@ -14,8 +14,8 @@ class ArchiveCard extends StatelessWidget {
   final String image;
   final bool isQuantity;
   final bool isComplete;
-
-  const ArchiveCard({Key key, this.type, this.date, this.quantity, this.medicineName, this.image, this.isQuantity=true, this.isComplete}) : super(key: key);
+  final String text;
+  const ArchiveCard({Key key, this.type, this.date, this.quantity, this.medicineName, this.image, this.isQuantity=true, this.isComplete, this.text=''}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 720, height: 1520, allowFontScaling: false);
@@ -31,10 +31,57 @@ class ArchiveCard extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(50)),
-              child: Row(
-                mainAxisAlignment: isQuantity==true?MainAxisAlignment.spaceBetween:MainAxisAlignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  type=='text'?Container(
+                  SizedBox(height: ScreenUtil().setHeight(30),),
+                  Row(
+                    mainAxisAlignment: isQuantity==true?MainAxisAlignment.spaceBetween:MainAxisAlignment.center,
+                    children: <Widget>[
+                      type=='text'?Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Theme.of(context).accentColor,
+                            border: Border.all(color: Theme.of(context).primaryColor,width: 2)
+                        ),
+                        width: ScreenUtil().setWidth(300),
+                        child: Padding(
+                          padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
+                          child: CustomText(text: medicineName,align: TextAlign.center,size: ScreenUtil().setSp(40),color: Colors.black,),
+                        ),
+                      ):
+                      Container(
+                        width: ScreenUtil().setWidth(200),
+                        height: ScreenUtil().setHeight(180),
+                        child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context){
+                                return ImageView(url: image,);}));
+                            },
+                            child: CachedNetworkImage(
+                              imageUrl: image,
+                              fit: BoxFit.cover,
+                              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                                  Center(child: CircularProgressIndicator(
+                                    value: downloadProgress.progress,
+                                    backgroundColor: Colors.white,
+                                    valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),)),
+                              errorWidget: (context, url, error) => Icon(Icons.error),
+                            ),
+                        ),
+                      ),
+                      isQuantity==true?CircleAvatar(
+                        backgroundColor: Color(0xffBDBDBD),
+                        radius: 32,
+                        child: CircleAvatar(
+                          backgroundColor: Theme.of(context).primaryColor,
+                          radius: 30,
+                          child: CustomText(text: quantity,size: ScreenUtil().setSp(50),),
+                        ),
+                      ):SizedBox.shrink(),
+                    ],
+                  ),
+                  isComplete==true?Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: Theme.of(context).accentColor,
@@ -43,36 +90,7 @@ class ArchiveCard extends StatelessWidget {
                     width: ScreenUtil().setWidth(300),
                     child: Padding(
                       padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
-                      child: CustomText(text: medicineName,align: TextAlign.center,size: ScreenUtil().setSp(40),color: Colors.black,),
-                    ),
-                  ):
-                  Container(
-                    width: ScreenUtil().setWidth(200),
-                    height: ScreenUtil().setHeight(180),
-                    child: GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, CupertinoPageRoute(builder: (context){
-                            return ImageView(url: image,);}));
-                        },
-                        child: CachedNetworkImage(
-                          imageUrl: image,
-                          fit: BoxFit.cover,
-                          progressIndicatorBuilder: (context, url, downloadProgress) =>
-                              Center(child: CircularProgressIndicator(
-                                value: downloadProgress.progress,
-                                backgroundColor: Colors.white,
-                                valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),)),
-                          errorWidget: (context, url, error) => Icon(Icons.error),
-                        ),
-                    ),
-                  ),
-                  isQuantity==true?CircleAvatar(
-                    backgroundColor: Color(0xffBDBDBD),
-                    radius: 32,
-                    child: CircleAvatar(
-                      backgroundColor: Theme.of(context).primaryColor,
-                      radius: 30,
-                      child: CustomText(text: quantity,size: ScreenUtil().setSp(50),),
+                      child: CustomText(text: text,align: TextAlign.center,size: ScreenUtil().setSp(40),color: Colors.black,),
                     ),
                   ):SizedBox.shrink()
                 ],
