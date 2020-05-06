@@ -24,7 +24,7 @@ class ArchiveCard extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: ScreenUtil().setHeight(65)),
           child: Container(
-            height: ScreenUtil().setHeight(300),
+            height: ScreenUtil().setHeight(360),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 color: isComplete==false?Color(0xffD81B60):Color(0xff2E7D32)
@@ -34,7 +34,7 @@ class ArchiveCard extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(height: ScreenUtil().setHeight(30),),
+                  SizedBox(height: ScreenUtil().setHeight(40),),
                   Row(
                     mainAxisAlignment: isQuantity==true?MainAxisAlignment.spaceBetween:MainAxisAlignment.center,
                     children: <Widget>[
@@ -81,13 +81,14 @@ class ArchiveCard extends StatelessWidget {
                       ):SizedBox.shrink(),
                     ],
                   ),
+                  SizedBox(height: ScreenUtil().setHeight(20),),
                   isComplete==true?Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: Theme.of(context).accentColor,
                         border: Border.all(color: Theme.of(context).primaryColor,width: 2)
                     ),
-                    width: ScreenUtil().setWidth(300),
+                    width: ScreenUtil().setWidth(400),
                     child: Padding(
                       padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
                       child: CustomText(text: text,align: TextAlign.center,size: ScreenUtil().setSp(40),color: Colors.black,),
