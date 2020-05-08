@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:mydoctor/widgets/custom-text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Contact extends StatelessWidget {
 
@@ -86,14 +88,19 @@ class Contact extends StatelessWidget {
                       Center(
                         child: Padding(
                           padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Theme.of(context).primaryColor
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(ScreenUtil().setWidth(30)),
-                              child: CustomText(text: '377.3594677',),
+                          child: GestureDetector(
+                            onTap: () async {
+                              await launch("tel://377.3594677");
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Theme.of(context).primaryColor
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(ScreenUtil().setWidth(30)),
+                                child: CustomText(text: '377.3594677',),
+                              ),
                             ),
                           ),
                         ),
@@ -118,14 +125,24 @@ class Contact extends StatelessWidget {
                       Center(
                         child: Padding(
                           padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Theme.of(context).primaryColor
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(ScreenUtil().setWidth(30)),
-                              child: CustomText(text: 'katia.caucci@gmail.com',),
+                          child: GestureDetector(
+                            onTap: () async {
+                              var url = 'mailto:katia.caucci@gmail.com?subject=&body=';
+                              if (await canLaunch(url)) {
+                              await launch(url);
+                              } else {
+                              throw 'Could not launch $url';
+                              }
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Theme.of(context).primaryColor
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(ScreenUtil().setWidth(30)),
+                                child: CustomText(text: 'katia.caucci@gmail.com',),
+                              ),
                             ),
                           ),
                         ),
@@ -161,11 +178,97 @@ class Contact extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    CustomText(text: 'Lunedi         :- 9 - 10',),
-                                    CustomText(text: 'Martedi        :- 17 - 18',),
-                                    CustomText(text: 'Mercoledi    :- 17 - 18',),
-                                    CustomText(text: 'Giovedi      :- 9 - 10',),
-                                    CustomText(text: 'Venerdi      :- 9 - 10 (su appuntamento)',),
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Lunedi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '09.00 - 10.00',)
+                                        ),
+
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Martedi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '17.00  - 18.00',)
+                                        ),
+
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Mercoledi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '09.00 - 10.00',)
+                                        ),
+
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Giovedi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '09.00 - 10.00',)
+                                        ),
+
+                                      ],
+                                    ),
+                                    Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Venerdi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(280),
+                                            child: CustomText(text: '09.00 - 10.00\n(su appuntamento)',)
+                                        ),
+
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),

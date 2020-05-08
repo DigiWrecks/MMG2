@@ -230,7 +230,7 @@ class _AdminNewRecipeCompleteState extends State<AdminNewRecipeComplete> {
                         padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(35)),
                         child: AdminArchiveCard(
                           type: 'image',
-                          quantity: quantity,
+                          isQuantity: false,
                           date: date,
                           collection: 'newrecipe',
                           image: image,

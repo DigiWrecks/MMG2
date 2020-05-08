@@ -68,7 +68,7 @@ class _NewRecipeState extends State<NewRecipe> {
 
                 return Padding(
                   padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(35)),
-                  child: ArchiveCard(type: 'image',quantity: quantity,date: date,image: image,isComplete: completed,text: text,),
+                  child: ArchiveCard(type: 'image',isQuantity: false,date: date,image: image,isComplete: completed,text: text,),
                 );
               },
             ):

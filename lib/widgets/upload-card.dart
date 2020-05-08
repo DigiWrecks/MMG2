@@ -3,17 +3,16 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mydoctor/data/element-2-data.dart';
+import 'package:mydoctor/data/element-1-data.dart';
 import 'package:mydoctor/widgets/toast.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UploadCard extends StatefulWidget {
-  final TextEditingController controller;
   final String itemNo;
-  final Element2Data object;
+  final Element1Data object;
 
-  const UploadCard({Key key, this.controller, this.itemNo, this.object}) : super(key: key);
+  const UploadCard({Key key, this.itemNo, this.object}) : super(key: key);
 
   @override
   _UploadCardState createState() => _UploadCardState();
@@ -80,31 +79,6 @@ class _UploadCardState extends State<UploadCard> {
             ),
           ),
 
-          SizedBox(width: ScreenUtil().setWidth(40),),
-          Container(
-            height: ScreenUtil().setHeight(80),
-            width: ScreenUtil().setWidth(400),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(10)),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  textAlignVertical: TextAlignVertical.top,
-                  controller: widget.controller,
-                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: ScreenUtil().setSp(40)),
-                  decoration: new InputDecoration.collapsed(
-                      hintText: 'Inserisci Quantità',
-                      hintStyle:TextStyle(color: Colors.grey,fontWeight: FontWeight.bold,fontSize: ScreenUtil().setSp(40))
-                  ),
-                ),
-              ),
-            ),
-          )
         ],
       ),
 
