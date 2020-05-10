@@ -43,7 +43,7 @@ class _AdminCompletedState extends State<AdminCompleted> with SingleTickerProvid
           controller: tabController,
           tabs: <Widget>[
             Tab(child: CustomText(text: 'Ricette Terapie Croniche',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
-            Tab(child: CustomText(text: 'Ricette Nuove prescrizioni',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
+            Tab(child: CustomText(text: 'Impegnative accertamenti da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
             Tab(child: CustomText(text: 'Impegnative accertamenti da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
           ],
         ),
