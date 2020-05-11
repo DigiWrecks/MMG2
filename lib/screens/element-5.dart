@@ -43,7 +43,7 @@ class _Element5State extends State<Element5> with SingleTickerProviderStateMixin
           controller: tabController,
           tabs: <Widget>[
             Tab(child: CustomText(text: 'Ricette Terapie Croniche',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
-            Tab(child: CustomText(text: 'Impegnative accertamenti da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
+            Tab(child: CustomText(text: 'Richiesta farmaco da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
             Tab(child: CustomText(text: 'Impegnative accertamenti da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
           ],
         ),

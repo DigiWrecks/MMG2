@@ -22,7 +22,7 @@ class Element2 extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: CustomText(text: 'Impegnative Accertamenti da specialista',),
+        title: CustomText(text: 'Richiesta farmaco da specialista',),
       ),
       body: Container(
         width: double.infinity,
