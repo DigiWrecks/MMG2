@@ -3,6 +3,7 @@ import 'package:mydoctor/screens/admin/admin-home.dart';
 import 'package:mydoctor/screens/admin/admin-login.dart';
 import 'package:mydoctor/screens/home.dart';
 import 'package:mydoctor/screens/login.dart';
+import 'package:mydoctor/screens/privacy-policy.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Color(0xff0D47A1),
         accentColor: Color(0xff90CAF9)
       ),
-      home: email==null?LogIn():email=='admin'?AdminHome():Home(),
+      home: email==null?PrivacyPolicy():email=='admin'?AdminHome():Home(),
       //home: AdminHome(),
     );
   }

@@ -5,6 +5,7 @@ import 'package:mydoctor/screens/contact.dart';
 import 'package:mydoctor/screens/element-2.dart';
 import 'package:mydoctor/screens/element-4.dart';
 import 'package:mydoctor/screens/element-5.dart';
+import 'package:mydoctor/screens/privacy-policy.dart';
 import 'package:mydoctor/screens/profile.dart';
 import 'package:mydoctor/widgets/button.dart';
 import 'package:mydoctor/widgets/custom-text.dart';
@@ -34,16 +35,20 @@ class Home extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.account_circle),
+            onPressed: () async {
+              Navigator.push(context, CupertinoPageRoute(builder: (context){
+                  return Profile();}));
+              },
+          ),
           Padding(
             padding: EdgeInsets.only(right: ScreenUtil().setWidth(10)),
             child: IconButton(
-              icon: Icon(Icons.account_circle),
+              icon: Icon(Icons.description),
               onPressed: () async {
-                SharedPreferences prefs = await SharedPreferences.getInstance();
-                String email = prefs.getString('email');
                 Navigator.push(context, CupertinoPageRoute(builder: (context){
-                    return Profile();}));
-
+                  return PrivacyPolicy();}));
               },
             ),
           )
