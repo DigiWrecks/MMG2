@@ -256,7 +256,7 @@ class PrivacyPolicy extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: ScreenUtil().setWidth(45)),
                   child: Button(
-                    text: 'Accept',
+                    text: 'Accetto',
                     color: Colors.green,
                     onclick: (){
                       Navigator.push(
