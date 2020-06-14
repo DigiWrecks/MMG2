@@ -3,11 +3,34 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
+import 'package:mydoctor/screens/home.dart';
 import 'package:mydoctor/screens/login.dart';
 import 'package:mydoctor/widgets/button.dart';
 import 'package:mydoctor/widgets/custom-text.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class PrivacyPolicy extends StatelessWidget {
+class PrivacyPolicy extends StatefulWidget {
+  @override
+  _PrivacyPolicyState createState() => _PrivacyPolicyState();
+}
+
+class _PrivacyPolicyState extends State<PrivacyPolicy> {
+  String email;
+
+  getData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      email = prefs.getString('email');
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 720, height: 1520, allowFontScaling: false);
@@ -256,12 +279,12 @@ class PrivacyPolicy extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: ScreenUtil().setWidth(45)),
                   child: Button(
-                    text: 'Accetto',
+                    text: 'Chiudi',
                     color: Colors.green,
                     onclick: (){
                       Navigator.push(
                         context,
-                        CupertinoPageRoute(builder: (context) => LogIn()),
+                        CupertinoPageRoute(builder: (context) => email==null?LogIn():Home()),
                       );
                     },
                   ),
