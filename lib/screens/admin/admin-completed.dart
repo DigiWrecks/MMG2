@@ -32,7 +32,7 @@ class _AdminCompletedState extends State<AdminCompleted> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 720, height: 1520, allowFontScaling: false);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

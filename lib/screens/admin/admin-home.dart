@@ -6,7 +6,8 @@ import 'package:mydoctor/screens/admin/admin-completed.dart';
 import 'package:mydoctor/screens/admin/admin-exsisting.dart';
 import 'package:mydoctor/screens/admin/admin-newrecipe.dart';
 import 'package:mydoctor/widgets/custom-text.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
+import '../login.dart';
 
 class AdminHome extends StatefulWidget {
 
@@ -42,8 +43,17 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
         automaticallyImplyLeading: false,
         title: CustomText(text: 'Richieste',),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.setString('email', null);
+              Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){
+                return LogIn();}));
+            },
+          ),
           Padding(
-            padding: EdgeInsets.only(right: ScreenUtil().setWidth(40)),
+            padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
             child: GestureDetector(
               onTap: (){
                 Navigator.push(context, CupertinoPageRoute(builder: (context){
@@ -54,7 +64,8 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
                   height: ScreenUtil().setHeight(45),
                   child: Image.asset('images/tick.png')),
             ),
-          )
+          ),
+
         ],
         bottom: TabBar(
           indicatorColor: Colors.white,

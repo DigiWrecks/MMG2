@@ -50,7 +50,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         fontFamily: 'GoogleSans',
         primaryColor: Color(0xff0D47A1),
-        accentColor: Color(0xff90CAF9)
+        accentColor: Color(0xff90CAF9),
+        textSelectionColor: Colors.red
       ),
       home: email==null?PrivacyPolicy():email=='admin'?AdminHome():Home(),
       //home: AdminHome(),

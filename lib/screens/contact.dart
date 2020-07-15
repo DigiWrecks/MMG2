@@ -68,6 +68,21 @@ class Contact extends StatelessWidget {
                           ),
                         ),
                       ),
+                      Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(30)),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Theme.of(context).primaryColor
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(ScreenUtil().setWidth(30)),
+                              child: CustomText(text: 'Cossignano\nVia Borgo San Paolo(presso Municipio)',),
+                            ),
+                          ),
+                        ),
+                      ),
 
 
                     ],
@@ -164,6 +179,11 @@ class Contact extends StatelessWidget {
                           child: CustomText(text: 'Orario Studio Medico',color: Colors.black,size: ScreenUtil().setSp(50),),
                         ),
 
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(ScreenUtil().setHeight(30),ScreenUtil().setHeight(20),0,0),
+                          child: CustomText(text: 'Ripatransone',color: Colors.black,size: ScreenUtil().setSp(40),),
+                        ),
+
                         Center(
                           child: Padding(
                             padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(30)),
@@ -196,24 +216,7 @@ class Contact extends StatelessWidget {
 
                                       ],
                                     ),
-                                    Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(150),
-                                            child: CustomText(text: 'Martedi',)
-                                        ),
-                                        SizedBox(width: ScreenUtil().setWidth(20),),
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(30),
-                                            child: CustomText(text: '-',)
-                                        ),
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(200),
-                                            child: CustomText(text: '17.00  - 18.00',)
-                                        ),
 
-                                      ],
-                                    ),
                                     Row(
                                       children: <Widget>[
                                         SizedBox(
@@ -232,24 +235,7 @@ class Contact extends StatelessWidget {
 
                                       ],
                                     ),
-                                    Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(150),
-                                            child: CustomText(text: 'Giovedi',)
-                                        ),
-                                        SizedBox(width: ScreenUtil().setWidth(20),),
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(30),
-                                            child: CustomText(text: '-',)
-                                        ),
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(200),
-                                            child: CustomText(text: '09.00 - 10.00',)
-                                        ),
 
-                                      ],
-                                    ),
                                     Row(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
@@ -269,6 +255,71 @@ class Contact extends StatelessWidget {
 
                                       ],
                                     ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(ScreenUtil().setHeight(30),ScreenUtil().setHeight(20),0,0),
+                          child: CustomText(text: 'Cossignano',color: Colors.black,size: ScreenUtil().setSp(40),),
+                        ),
+
+                        Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(30)),
+                            child: Container(
+                              width: ScreenUtil().setWidth(570),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Theme.of(context).primaryColor
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(ScreenUtil().setWidth(50),ScreenUtil().setWidth(30),ScreenUtil().setWidth(30),ScreenUtil().setWidth(30)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Martedi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '17.00  - 18.00',)
+                                        ),
+
+                                      ],
+                                    ),
+
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Giovedi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '09.00 - 10.00',)
+                                        ),
+
+                                      ],
+                                    ),
+
                                   ],
                                 ),
                               ),

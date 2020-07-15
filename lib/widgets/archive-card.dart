@@ -91,7 +91,8 @@ class ArchiveCard extends StatelessWidget {
                     width: ScreenUtil().setWidth(400),
                     child: Padding(
                       padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
-                      child: CustomText(text: text,align: TextAlign.center,size: ScreenUtil().setSp(40),color: Colors.black,),
+                      child: SelectableText(text==null?"":text,style: TextStyle(fontSize: ScreenUtil().setSp(40),fontWeight: FontWeight.bold),textAlign: TextAlign.center),
+                      //child: CustomText(text: text,align: TextAlign.center,size: ScreenUtil().setSp(40),color: Colors.black,),
                     ),
                   ):SizedBox.shrink()
                 ],

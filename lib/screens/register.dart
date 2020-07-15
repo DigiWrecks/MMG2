@@ -111,6 +111,7 @@ class _RegisterState extends State<Register> {
                           underline: Divider(color: Colors.white,height: 0,thickness: 0,),
                           items: [
                             DropdownMenuItem(child: CustomText(text: 'Ripatransone',color: Colors.black,),value: 'Ripatransone',),
+                            DropdownMenuItem(child: CustomText(text: 'Cossignano',color: Colors.black,),value: 'Cossignano',),
                           ],onChanged:(newValue){
                          setState(() {
                            location = newValue;

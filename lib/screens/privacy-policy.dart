@@ -52,7 +52,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
               children: <Widget>[
                 CustomText(
                   text: "Il rispetto per la privacy degli utenti, ovvero “medici di medicina generale” e “pediatri di libera scelta” (di seguito, per comodità, solo “medico”)"
-                      " e pazienti loro assistiti, che utilizzeranno l’APP MEDICA  denominata “MMG”è fondamentale ed imprescindibile.\n"
+                      " e pazienti loro assistiti, che utilizzeranno l’APP MEDICA  denominata “MMG2®”è fondamentale ed imprescindibile.\n"
                       "In queste pagine sono descritte le modalità"
                       " di gestione della APP Medica, anche in riferimento all’eventuale trattamento dei dati degli utenti che la utilizzano.\n"
                       "La presente informativa è resa ai"
@@ -279,7 +279,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: ScreenUtil().setWidth(45)),
                   child: Button(
-                    text: 'Chiudi',
+                    text: email==null?'Accetto':'Chiudi',
                     color: Colors.green,
                     onclick: (){
                       Navigator.push(

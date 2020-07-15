@@ -145,6 +145,7 @@ class _AdminChallangeCompleteState extends State<AdminChallangeComplete> {
                                   items: [
                                     DropdownMenuItem(child: CustomText(text: 'All',color: Colors.black,),value: 'all',),
                                     DropdownMenuItem(child: CustomText(text: 'Ripatransone',color: Colors.black,),value: 'Ripatransone',),
+                                    DropdownMenuItem(child: CustomText(text: 'Cossignano',color: Colors.black,),value: 'Cossignano',),
                                   ],onChanged:(newValue){
                                   setState(() {
                                     location = newValue;

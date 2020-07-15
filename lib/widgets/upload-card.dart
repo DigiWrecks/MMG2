@@ -51,7 +51,6 @@ class _UploadCardState extends State<UploadCard> {
               File image = await ImagePicker.pickImage(source: ImageSource.camera,imageQuality: 50);
               try{
                 StorageReference ref = FirebaseStorage.instance.ref().child("new/$email/${basename(image.path)}");
-                ToastBar(text: 'Caricamento',color: Colors.orangeAccent).show();
                 StorageUploadTask uploadTask = ref.putFile(image);
                 final StorageTaskSnapshot downloadUrl = (await uploadTask.onComplete);
                 String imgurl = (await downloadUrl.ref.getDownloadURL());
