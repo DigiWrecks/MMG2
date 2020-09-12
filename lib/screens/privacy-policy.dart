@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
@@ -52,7 +50,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
               children: <Widget>[
                 CustomText(
                   text: "Il rispetto per la privacy degli utenti, ovvero “medici di medicina generale” e “pediatri di libera scelta” (di seguito, per comodità, solo “medico”)"
-                      " e pazienti loro assistiti, che utilizzeranno l’APP MEDICA  denominata “MMG2®”è fondamentale ed imprescindibile.\n"
+                      " e pazienti loro assistiti, che utilizzeranno l’APP MEDICA  denominata “MMG2®©”è fondamentale ed imprescindibile.\n"
                       "In queste pagine sono descritte le modalità"
                       " di gestione della APP Medica, anche in riferimento all’eventuale trattamento dei dati degli utenti che la utilizzano.\n"
                       "La presente informativa è resa ai"
@@ -257,7 +255,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                       " (Autorità Garante per la Protezione dei dati personali, con sede in Piazza di Monte Citorio n. 121 – 00186 Roma).Le richieste potranno essere"
                       " rivolte:\n"
                       " -	via mail, all’indirizzo  del “Medico”\n"
-                      " -	oppure per posta, all’indirizzo:  dott. Tizio, via Bianchi",
+                      " -	oppure per posta, all’indirizzo:  Dott.ssa Katia Caucci, Piazza Madre Teresa di Calcutta 1 - Ripatransone (AP)",
                   align: TextAlign.justify,
                   isBold: false,
                 ),

@@ -155,7 +155,8 @@ class Element1 extends StatelessWidget {
                      await saveAsImage(data.image1, q1.text);
                     }
                     else if(data.image1!=''&&q1.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      //ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsImage(data.image1, "N/A");
                     }
                   }else{
                     if(m1.text!=''&&q1.text!=''){
@@ -163,7 +164,7 @@ class Element1 extends StatelessWidget {
                       await saveAsText(m1.text, q1.text);
                     }
                     else if(m1.text!=''&&q1.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsText(m1.text, "N/A");
                     }
                   }
 
@@ -175,7 +176,7 @@ class Element1 extends StatelessWidget {
                       await saveAsImage(data.image2, q2.text);
                     }
                     else if(data.image2!=''&&q2.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsImage(data.image2, "N/A");
                     }
                   }else{
                     if(m2.text!=''&&q2.text!=''){
@@ -183,7 +184,7 @@ class Element1 extends StatelessWidget {
                       await saveAsText(m2.text, q2.text);
                     }
                     else if(m2.text!=''&&q2.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsText(m2.text, "N/A");
                     }
                   }
 
@@ -195,7 +196,7 @@ class Element1 extends StatelessWidget {
                       await saveAsImage(data.image3, q3.text);
                     }
                     else if(data.image3!=''&&q3.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsImage(data.image3, "N/A");
                     }
                   }else{
                     if(m3.text!=''&&q3.text!=''){
@@ -203,7 +204,7 @@ class Element1 extends StatelessWidget {
                       await saveAsText(m3.text, q3.text);
                     }
                     else if(m3.text!=''&&q3.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsText(m3.text, "N/A");
                     }
                   }
 
@@ -215,7 +216,7 @@ class Element1 extends StatelessWidget {
                       await saveAsImage(data.image4, q4.text);
                     }
                     else if(data.image4!=''&&q4.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsImage(data.image4, "N/A");
                     }
                   }else{
                     if(m4.text!=''&&q4.text!=''){
@@ -223,7 +224,7 @@ class Element1 extends StatelessWidget {
                       await saveAsText(m4.text, q4.text);
                     }
                     else if(m4.text!=''&&q4.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsText(m4.text, "N/A");
                     }
                   }
 
@@ -234,7 +235,7 @@ class Element1 extends StatelessWidget {
                       await saveAsImage(data.image5, q5.text);
                     }
                     else if(data.image5!=''&&q5.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsImage(data.image5, "N/A");
                     }
                   }else{
                     if(m5.text!=''&&q5.text!=''){
@@ -242,7 +243,7 @@ class Element1 extends StatelessWidget {
                       await saveAsText(m5.text, q5.text);
                     }
                     else if(m5.text!=''&&q5.text==''){
-                      ToastBar(text: 'Inserisci tutte le informazioni',color: Colors.red).show();
+                      await saveAsText(m5.text, "N/A");
                     }
                   }
 

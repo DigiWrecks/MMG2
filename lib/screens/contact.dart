@@ -202,7 +202,7 @@ class Contact extends StatelessWidget {
                                       children: <Widget>[
                                         SizedBox(
                                             width: ScreenUtil().setWidth(150),
-                                            child: CustomText(text: 'Lunedi',)
+                                            child: CustomText(text: 'Martedi',)
                                         ),
                                         SizedBox(width: ScreenUtil().setWidth(20),),
                                         SizedBox(
@@ -211,26 +211,7 @@ class Contact extends StatelessWidget {
                                         ),
                                         SizedBox(
                                             width: ScreenUtil().setWidth(200),
-                                            child: CustomText(text: '09.00 - 10.00',)
-                                        ),
-
-                                      ],
-                                    ),
-
-                                    Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(150),
-                                            child: CustomText(text: 'Mercoledi',)
-                                        ),
-                                        SizedBox(width: ScreenUtil().setWidth(20),),
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(30),
-                                            child: CustomText(text: '-',)
-                                        ),
-                                        SizedBox(
-                                            width: ScreenUtil().setWidth(200),
-                                            child: CustomText(text: '09.00 - 10.00',)
+                                            child: CustomText(text: '14.30 - 15.30',)
                                         ),
 
                                       ],
@@ -250,7 +231,7 @@ class Contact extends StatelessWidget {
                                         ),
                                         SizedBox(
                                             width: ScreenUtil().setWidth(280),
-                                            child: CustomText(text: '09.00 - 10.00\n(su appuntamento)',)
+                                            child: CustomText(text: '09.30 - 10.30\n(su appuntamento)',)
                                         ),
 
                                       ],
@@ -286,6 +267,25 @@ class Contact extends StatelessWidget {
                                       children: <Widget>[
                                         SizedBox(
                                             width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Lunedi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '8.30  - 11.30',)
+                                        ),
+
+                                      ],
+                                    ),
+
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
                                             child: CustomText(text: 'Martedi',)
                                         ),
                                         SizedBox(width: ScreenUtil().setWidth(20),),
@@ -295,7 +295,26 @@ class Contact extends StatelessWidget {
                                         ),
                                         SizedBox(
                                             width: ScreenUtil().setWidth(200),
-                                            child: CustomText(text: '17.00  - 18.00',)
+                                            child: CustomText(text: '8.30  - 11.30',)
+                                        ),
+
+                                      ],
+                                    ),
+
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Mercoledi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '16.00  - 18.00',)
                                         ),
 
                                       ],
@@ -314,7 +333,26 @@ class Contact extends StatelessWidget {
                                         ),
                                         SizedBox(
                                             width: ScreenUtil().setWidth(200),
-                                            child: CustomText(text: '09.00 - 10.00',)
+                                            child: CustomText(text: '08.30 - 11.30',)
+                                        ),
+
+                                      ],
+                                    ),
+
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(150),
+                                            child: CustomText(text: 'Venerdi',)
+                                        ),
+                                        SizedBox(width: ScreenUtil().setWidth(20),),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(30),
+                                            child: CustomText(text: '-',)
+                                        ),
+                                        SizedBox(
+                                            width: ScreenUtil().setWidth(200),
+                                            child: CustomText(text: '11.00 - 13.00',)
                                         ),
 
                                       ],
