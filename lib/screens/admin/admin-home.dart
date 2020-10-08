@@ -71,9 +71,9 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
           indicatorColor: Colors.white,
           controller: tabController,
           tabs: <Widget>[
-            Tab(child: CustomText(text: 'Ricette Terapie Croniche',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
-            Tab(child: CustomText(text: 'Richiesta farmaco da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
-            Tab(child: CustomText(text: 'Impegnative accertamenti da specialista',align: TextAlign.center,size: ScreenUtil().setSp(24),)),
+            Tab(child: CustomText(text: 'Ricette Terapie Croniche',align: TextAlign.center,size: ScreenUtil().setSp(18),)),
+            Tab(child: CustomText(text: 'Richiesta farmaco da specialista',align: TextAlign.center,size: ScreenUtil().setSp(16),)),
+            Tab(child: CustomText(text: 'Impegnative accertamenti da specialista',align: TextAlign.center,size: ScreenUtil().setSp(16),)),
           ],
         ),
       ),

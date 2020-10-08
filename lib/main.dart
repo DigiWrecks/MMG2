@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mydoctor/screens/admin/admin-home.dart';
 import 'package:mydoctor/screens/admin/admin-login.dart';
 import 'package:mydoctor/screens/home.dart';
@@ -8,7 +9,12 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  runApp(MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MyApp());
+  });
+
+
   OneSignal.shared.init(
       "e87f5b22-5db7-4c61-83bf-e6e812ebae07",
       iOSSettings: {

@@ -65,7 +65,7 @@ class _ProfileState extends State<Profile> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage('images/mainback.png'),fit: BoxFit.fitHeight)
+                image: DecorationImage(image: AssetImage('images/mainback.png'),fit: BoxFit.fill)
             ),
           ),
           Column(
