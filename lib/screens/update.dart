@@ -16,7 +16,7 @@ class UpdateScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomText(text: 'You have old version of the app. Please Update the app to newer version to get better experience and new features.',size: 20,color: Colors.black,align: TextAlign.center,),
+            CustomText(text: "Se avete la vecchia versione dell'app procedere con l' aggiornamento alla nuova versione per un'esperienza migliore e nuove caratteristiche.",size: 20,color: Colors.black,align: TextAlign.center,),
             Padding(
               padding: EdgeInsets.all(25),
               child: Button(text: 'Update',color: Colors.green,onclick: () async {

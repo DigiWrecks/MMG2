@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,13 +52,25 @@ class _MyAppState extends State<MyApp> {
     var sub = await Firestore.instance.collection('info').where('key', isEqualTo: 'buildNumber').getDocuments();
     var info = sub.documents;
     if(info.isNotEmpty){
-      if(int.parse(buildNumber)<info[0]['buildNumber']){
-        setState(() {
-          email = 'update';
-        });
-      }else{
-        getData();
+      if(Platform.isAndroid){
+        if(int.parse(buildNumber)<info[0]['androidBuildNumber']){
+          setState(() {
+            email = 'update';
+          });
+        }else{
+          getData();
+        }
       }
+      else{
+        if(int.parse(buildNumber)<info[0]['iosBuildNumber']){
+          setState(() {
+            email = 'update';
+          });
+        }else{
+          getData();
+        }
+      }
+
     }
 
   }
