@@ -47,8 +47,8 @@ class LogIn extends StatelessWidget {
       List<String> searchStrings = [logged[0]['fname'].trim(),logged[0]['lname'].trim()];
       prefs.setStringList('searchString', searchStrings);
 
-            Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){
-        return Home();}));
+      Navigator.of(context).pushAndRemoveUntil(
+          CupertinoPageRoute(builder: (context) => Home()), (Route<dynamic> route) => false);
     }
     catch(E){
       print(E);

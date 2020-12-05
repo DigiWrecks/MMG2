@@ -10,7 +10,6 @@ import 'package:mydoctor/screens/profile.dart';
 import 'package:mydoctor/widgets/button.dart';
 import 'package:mydoctor/widgets/custom-text.dart';
 import 'package:mydoctor/widgets/vertical-card.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'element-1.dart';
 

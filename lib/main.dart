@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mydoctor/screens/admin/admin-home.dart';
-import 'package:mydoctor/screens/admin/admin-login.dart';
 import 'package:mydoctor/screens/home.dart';
-import 'package:mydoctor/screens/login.dart';
 import 'package:mydoctor/screens/privacy-policy.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(MyApp());
@@ -39,6 +38,19 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       email = prefs.getString('email');
     });
+  }
+
+  getPackageInfo() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String buildNumber = packageInfo.buildNumber;
+    String version = packageInfo.version;
+    var sub = await FirebaseFirestore.instance.collection('info').where('key', isEqualTo: 'buildNumber').get();
+    var info = sub.docs;
+    if(buildNumber<info[0]['buildNumber']){
+      Navigator.of(context).pushAndRemoveUntil(
+          CupertinoPageRoute(builder: (context) => UpdateScreen()), (Route<dynamic> route) => false);
+    }
+
   }
 
   @override

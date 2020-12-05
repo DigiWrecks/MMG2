@@ -44,8 +44,8 @@ class AdminLogin extends StatelessWidget {
 
         });
 
-        Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){
-          return AdminHome();}));
+        Navigator.of(context).pushAndRemoveUntil(
+            CupertinoPageRoute(builder: (context) => AdminHome()), (Route<dynamic> route) => false);
         
       } else {
         ToastBar(text: 'Email o password non corretti', color: Colors.red)

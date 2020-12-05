@@ -48,8 +48,8 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               prefs.setString('email', null);
-              Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){
-                return LogIn();}));
+              Navigator.of(context).pushAndRemoveUntil(
+                  CupertinoPageRoute(builder: (context) => LogIn()), (Route<dynamic> route) => false);
             },
           ),
           Padding(
