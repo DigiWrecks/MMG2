@@ -19,7 +19,7 @@ class UpdateScreen extends StatelessWidget {
             CustomText(text: "Se avete la vecchia versione dell'app procedere con l' aggiornamento alla nuova versione per un'esperienza migliore e nuove caratteristiche.",size: 20,color: Colors.black,align: TextAlign.center,),
             Padding(
               padding: EdgeInsets.all(25),
-              child: Button(text: 'Update',color: Colors.green,onclick: () async {
+              child: Button(text: 'Aggiornamento',color: Colors.green,onclick: () async {
                 String url;
                 if(Platform.isAndroid){
                   url = 'https://play.google.com/store/apps/details?id=com.digiwrecks.mydoctor';
