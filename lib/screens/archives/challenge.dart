@@ -13,7 +13,7 @@ class Challenge extends StatefulWidget {
 
 class _ChallengeState extends State<Challenge> {
 
-  final CollectionReference collectionReference  = Firestore.instance.collection("challenge");
+  final CollectionReference collectionReference  = Firestore.instance.collection("challenge1");
   List<DocumentSnapshot> dataList;
   StreamSubscription<QuerySnapshot> subscription;
 

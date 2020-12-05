@@ -71,7 +71,7 @@ class Element1 extends StatelessWidget {
 
                   saveAsImage(String image,String quantity) async {
                     try{
-                      Firestore.instance.collection('existing').add({
+                      Firestore.instance.collection('existing1').add({
                         'date': DateFormat('dd/MM/yyyy').format(DateTime.now()),
                         'type': 'image',
                         'quantity': quantity,
@@ -112,7 +112,7 @@ class Element1 extends StatelessWidget {
 
                   saveAsText(String text,String quantity) async {
                     try{
-                      Firestore.instance.collection('existing').add({
+                      Firestore.instance.collection('existing1').add({
                         'date': DateFormat('dd/MM/yyyy').format(DateTime.now()),
                         'type': 'text',
                         'quantity': quantity,

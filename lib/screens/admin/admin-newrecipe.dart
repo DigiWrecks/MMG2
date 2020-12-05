@@ -13,7 +13,7 @@ class AdminNewRecipe extends StatefulWidget {
 
 class _AdminNewRecipeState extends State<AdminNewRecipe> {
 
-  final CollectionReference collectionReference  = Firestore.instance.collection("newrecipe");
+  final CollectionReference collectionReference  = Firestore.instance.collection("newrecipe1");
   List<DocumentSnapshot> dataList;
   var subscription;
   String email;

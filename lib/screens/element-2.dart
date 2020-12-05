@@ -60,7 +60,7 @@ class Element2 extends StatelessWidget {
 
                   saveAsImage(String image) async {
                     try{
-                      Firestore.instance.collection('newrecipe').add({
+                      Firestore.instance.collection('newrecipe1').add({
                         'date': DateFormat('dd/MM/yyyy').format(DateTime.now()),
                         'image': image,
                         'type': 'image',

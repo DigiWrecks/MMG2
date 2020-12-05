@@ -13,7 +13,7 @@ class AdminExsistingComplete extends StatefulWidget {
 
 class _AdminExsistingCompleteState extends State<AdminExsistingComplete> {
 
-  final CollectionReference collectionReference  = Firestore.instance.collection("existing");
+  final CollectionReference collectionReference  = Firestore.instance.collection("existing1");
   List<DocumentSnapshot> dataList;
   var subscription;
   String email;

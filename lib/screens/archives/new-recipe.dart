@@ -13,7 +13,7 @@ class NewRecipe extends StatefulWidget {
 
 class _NewRecipeState extends State<NewRecipe> {
 
-  final CollectionReference collectionReference  = Firestore.instance.collection("newrecipe");
+  final CollectionReference collectionReference  = Firestore.instance.collection("newrecipe1");
   List<DocumentSnapshot> dataList;
   StreamSubscription<QuerySnapshot> subscription;
 

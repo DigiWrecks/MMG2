@@ -1,9 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mydoctor/screens/admin/admin-home.dart';
 import 'package:mydoctor/screens/home.dart';
 import 'package:mydoctor/screens/privacy-policy.dart';
+import 'package:mydoctor/screens/update.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:package_info/package_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -43,12 +47,16 @@ class _MyAppState extends State<MyApp> {
   getPackageInfo() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     String buildNumber = packageInfo.buildNumber;
-    String version = packageInfo.version;
-    var sub = await FirebaseFirestore.instance.collection('info').where('key', isEqualTo: 'buildNumber').get();
-    var info = sub.docs;
-    if(buildNumber<info[0]['buildNumber']){
-      Navigator.of(context).pushAndRemoveUntil(
-          CupertinoPageRoute(builder: (context) => UpdateScreen()), (Route<dynamic> route) => false);
+    var sub = await Firestore.instance.collection('info').where('key', isEqualTo: 'buildNumber').getDocuments();
+    var info = sub.documents;
+    if(info.isNotEmpty){
+      if(int.parse(buildNumber)<info[0]['buildNumber']){
+        setState(() {
+          email = 'update';
+        });
+      }else{
+        getData();
+      }
     }
 
   }
@@ -57,7 +65,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getData();
+    getPackageInfo();
   }
 
 
@@ -71,7 +79,7 @@ class _MyAppState extends State<MyApp> {
         accentColor: Color(0xff90CAF9),
         textSelectionColor: Colors.red
       ),
-      home: email==null?PrivacyPolicy():email=='admin'?AdminHome():Home(),
+      home: email==null?PrivacyPolicy():email=='admin'?AdminHome():email=='update'?UpdateScreen():Home(),
       //home: AdminHome(),
     );
   }

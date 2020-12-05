@@ -13,7 +13,7 @@ class Exsisting extends StatefulWidget {
 
 class _ExsistingState extends State<Exsisting> {
 
-  final CollectionReference collectionReference  = Firestore.instance.collection("existing");
+  final CollectionReference collectionReference  = Firestore.instance.collection("existing1");
   List<DocumentSnapshot> dataList;
   StreamSubscription<QuerySnapshot> subscription;
 

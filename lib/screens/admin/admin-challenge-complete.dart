@@ -13,7 +13,7 @@ class AdminChallangeComplete extends StatefulWidget {
 
 class _AdminChallangeCompleteState extends State<AdminChallangeComplete> {
 
-  final CollectionReference collectionReference  = Firestore.instance.collection("challenge");
+  final CollectionReference collectionReference  = Firestore.instance.collection("challenge1");
   List<DocumentSnapshot> dataList;
   var subscription;
   String email;

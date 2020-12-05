@@ -66,7 +66,7 @@ class Element4 extends StatelessWidget {
 
                   saveAsImage(String image) async {
                     try{
-                      Firestore.instance.collection('challenge').add({
+                      Firestore.instance.collection('challenge1').add({
                         'date': DateFormat('dd/MM/yyyy').format(DateTime.now()),
                         'type': 'image',
                         'image': image,

@@ -19,7 +19,7 @@ class LogIn extends StatelessWidget {
   TextEditingController password = TextEditingController();
 
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  CollectionReference collectionReference = Firestore.instance.collection('users');
+  CollectionReference collectionReference = Firestore.instance.collection('users1');
 
   signInWithEmail(BuildContext context) async {
     try{
@@ -28,7 +28,7 @@ class LogIn extends StatelessWidget {
       FirebaseUser user = result.user;
       print(user.uid);
 
-      var sub = await Firestore.instance.collection('users').where('email',isEqualTo: email.text).getDocuments();
+      var sub = await Firestore.instance.collection('users1').where('email',isEqualTo: email.text).getDocuments();
       var logged = sub.documents;
 
       SharedPreferences prefs = await SharedPreferences.getInstance();

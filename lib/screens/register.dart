@@ -25,7 +25,7 @@ class _RegisterState extends State<Register> {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   String location;
 
-  CollectionReference collectionReference = Firestore.instance.collection('users');
+  CollectionReference collectionReference = Firestore.instance.collection('users1');
 
   signUp() async {
     if(email.text!='' && password.text!='' && fname.text!=''&& lname.text!=''&& phone.text!=''&& fiscal.text!=''){

@@ -28,7 +28,7 @@ class _ProfileState extends State<Profile> {
   getData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     email = prefs.getString('email');
-    var sub =  await Firestore.instance.collection('users').where('email',isEqualTo: email).getDocuments();
+    var sub =  await Firestore.instance.collection('users1').where('email',isEqualTo: email).getDocuments();
     var list = sub.documents;
 
     setState(() {
@@ -83,7 +83,7 @@ class _ProfileState extends State<Profile> {
                 padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(30)),
                 child: Button(text: 'Update',onclick: () async {
                   try{
-                    Firestore.instance.collection('users').document(email).updateData({
+                    Firestore.instance.collection('users1').document(email).updateData({
                       'fname': fname.text,
                       'lname': lname.text,
                       'phone': phone.text,
