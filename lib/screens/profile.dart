@@ -109,12 +109,8 @@ class _ProfileState extends State<Profile> {
                 child: Button(text: 'Log Out',onclick: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   prefs.setString('email', null);
-                  Navigator.push(
-                    context,
-                    CupertinoPageRoute(builder: (context) => LogIn()),
-                  );
-                  // Navigator.of(context).pushAndRemoveUntil(
-                  //     CupertinoPageRoute(builder: (context) => LogIn()), (Route<dynamic> route) => false);
+                  Navigator.of(context).pushAndRemoveUntil(
+                      CupertinoPageRoute(builder: (context) => LogIn()), (Route<dynamic> route) => false);
                 }),
               ),
             ],

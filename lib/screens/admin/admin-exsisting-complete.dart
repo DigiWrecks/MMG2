@@ -236,7 +236,7 @@ class _AdminExsistingCompleteState extends State<AdminExsistingComplete> {
                             date: date,
                             image: image,
                             medicineName: medName,
-                            collection: 'existing',
+                            collection: 'existing1',
                             name: name,
                             isComplete: true,
                             tax: tax,

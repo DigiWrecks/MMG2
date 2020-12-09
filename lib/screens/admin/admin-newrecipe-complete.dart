@@ -233,7 +233,7 @@ class _AdminNewRecipeCompleteState extends State<AdminNewRecipeComplete> {
                           type: 'image',
                           isQuantity: false,
                           date: date,
-                          collection: 'newrecipe',
+                          collection: 'newrecipe1',
                           image: image,
                           medicineName: medName,
                           isComplete: true,

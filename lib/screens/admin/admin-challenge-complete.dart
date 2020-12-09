@@ -232,7 +232,7 @@ class _AdminChallangeCompleteState extends State<AdminChallangeComplete> {
                           isQuantity: false,
                           date: date,
                           image: image,
-                          collection: 'challenge',
+                          collection: 'challenge1',
                           medicineName: medName,
                           isComplete: true,
                           name: name,

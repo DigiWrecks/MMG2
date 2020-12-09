@@ -162,9 +162,9 @@ class AdminArchiveCard extends StatelessWidget {
                 isComplete==false?Padding(
                   padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(50)),
                   child: RaisedButton(
-                    onPressed: (){
+                    onPressed: () async {
                       try{
-                          Firestore.instance.collection(collection).document(docId).updateData({
+                          await Firestore.instance.collection(collection).document(docId).updateData({
                             'completed': true,
                           });
 
@@ -178,7 +178,7 @@ class AdminArchiveCard extends StatelessWidget {
                           ToastBar(text: 'Completato',color: Colors.green).show();
                         }
                         catch(e){
-                          ToastBar(text: 'Errore',color: Colors.red).show();
+                          ToastBar(text: 'Errore'+e.toString(),color: Colors.red).show();
                         }
                     },
                     shape:RoundedRectangleBorder(

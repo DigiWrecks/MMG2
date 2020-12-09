@@ -233,7 +233,7 @@ class _AdminNewRecipeState extends State<AdminNewRecipe> {
                           type: 'image',
                           isQuantity: false,
                           date: date,
-                          collection: 'newrecipe',
+                          collection: 'newrecipe1',
                           image: image,
                           playerId: playerId,
                           medicineName: medName,

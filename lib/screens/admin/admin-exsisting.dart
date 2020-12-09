@@ -247,7 +247,7 @@ class _AdminExsistingState extends State<AdminExsisting> {
                             image: image,
                             medicineName: medName,
                             playerId: playerId,
-                            collection: 'existing',
+                            collection: 'existing1',
                             name: name,
                             tax: tax,
                           text: text,

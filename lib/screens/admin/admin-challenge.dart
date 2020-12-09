@@ -233,7 +233,7 @@ class _AdminChallangeState extends State<AdminChallange> {
                           isQuantity: false,
                           date: date,
                           image: image,
-                          collection: 'challenge',
+                          collection: 'challenge1',
                           playerId: playerId,
                           medicineName: medName,
                           name: name,
