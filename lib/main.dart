@@ -21,7 +21,8 @@ void main() {
 
 
   OneSignal.shared.init(
-      "e87f5b22-5db7-4c61-83bf-e6e812ebae07",
+      //"e87f5b22-5db7-4c61-83bf-e6e812ebae07",
+    "2d0f6848-b8dc-43f3-9293-3e213e4fcbc2",
       iOSSettings: {
         OSiOSSettings.autoPrompt: true,
         OSiOSSettings.inAppLaunchUrl: true
