@@ -19,15 +19,13 @@ void main() {
     runApp(MyApp());
   });
 
-
   OneSignal.shared.init(
       //"e87f5b22-5db7-4c61-83bf-e6e812ebae07",
-    "2d0f6848-b8dc-43f3-9293-3e213e4fcbc2",
+      "2d0f6848-b8dc-43f3-9293-3e213e4fcbc2",
       iOSSettings: {
         OSiOSSettings.autoPrompt: true,
         OSiOSSettings.inAppLaunchUrl: true
-      }
-  );
+      });
   OneSignal.shared
       .setInFocusDisplayType(OSNotificationDisplayType.notification);
 }
@@ -38,7 +36,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   String email;
   getData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -50,51 +47,57 @@ class _MyAppState extends State<MyApp> {
   getPackageInfo() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     String buildNumber = packageInfo.buildNumber;
-    var sub = await Firestore.instance.collection('info').where('key', isEqualTo: 'buildNumber').getDocuments();
+    String version = packageInfo.version;
+    var sub = await Firestore.instance
+        .collection('info')
+        .where('key', isEqualTo: 'buildNumber')
+        .getDocuments();
     var info = sub.documents;
-    if(info.isNotEmpty){
-      if(Platform.isAndroid){
-        if(int.parse(buildNumber)<info[0]['androidBuildNumber']){
+    print("Version is:" + version);
+    if (info.isNotEmpty) {
+      if (Platform.isAndroid) {
+        if (int.parse(buildNumber) < info[0]['androidBuildNumber']) {
           setState(() {
             email = 'update';
           });
-        }else{
+        } else {
           getData();
         }
-      }
-      else{
-        if(int.parse(buildNumber)<info[0]['iosBuildNumber']){
+      } else {
+        if (int.parse(version) < info[0]['iosBuildNumber']) {
           setState(() {
             email = 'update';
           });
-        }else{
+        } else {
           getData();
         }
       }
-
     }
-
   }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getPackageInfo();
+    //getPackageInfo();
   }
-
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'GoogleSans',
-        primaryColor: Color(0xff0D47A1),
-        accentColor: Color(0xff90CAF9),
-        textSelectionColor: Colors.red
-      ),
-      home: email==null?PrivacyPolicy():email=='admin'?AdminHome():email=='update'?UpdateScreen():Home(),
+          fontFamily: 'GoogleSans',
+          primaryColor: Color(0xff0D47A1),
+          accentColor: Color(0xff90CAF9),
+          textSelectionColor: Colors.red),
+      home: email == null
+          ? PrivacyPolicy()
+          : email == 'admin'
+              ? AdminHome()
+              : email == 'update'
+                  ? UpdateScreen()
+                  : Home(),
       //home: AdminHome(),
     );
   }
